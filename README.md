@@ -6,7 +6,7 @@ This is a simple web application for managing a list of products. It allows user
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [Technologies Used](#Technologies Used)
+- [Technologies Used](#Technologies)
 
 ## Introduction
 
