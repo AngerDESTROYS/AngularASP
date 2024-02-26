@@ -1,0 +1,35 @@
+.loader-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  animation: spin 1s linear infinite;
+
+  &-message {
+    font-family: 'PragmaticaC', sans-serif;
+    font-size: 20px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

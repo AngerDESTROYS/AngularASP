@@ -1,0 +1,77 @@
+<section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img
+          class="card-img-top mb-5 mb-md-0"
+          src="{{ productDetails.image }}"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="small mb-1">category: {{ productDetails.category }}</div>
+        <h1 class="display-5 fw-bolder">{{ productDetails.title }}</h1>
+        <div class="fs-5 mb-5">
+          <ng-container *ngIf="productDetails.discountPrice">
+            <span class="text-decoration-line-through"
+              >${{ productDetails.price }}</span
+            >
+            <span>${{ productDetails.discountPrice }}</span>
+          </ng-container>
+          <ng-container *ngIf="!productDetails.discountPrice">
+            <span>${{ productDetails.price }}</span>
+          </ng-container>
+        </div>
+        <p class="lead">{{ productDetails.description }}</p>
+        <div class="d-flex">
+          <a
+            class="btn btn-outline-dark mt-auto me-4"
+            [routerLink]="['/products/edit', productDetails.id]"
+            >Edit</a
+          >
+
+          <button
+            class="btn btn-outline-danger flex-shrink-0"
+            type="button"
+            (click)="deleteProduct(+productDetails.id)"
+          >
+            <i class="bi-cart-fill me-1"></i>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container px-4 px-lg-5 mt-5">
+    <h2 class="fw-bolder mb-4">Related products</h2>
+    <div
+      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-between"
+    >
+      <div class="col mb-4" *ngFor="let product of relatedProducts">
+        <div class="card h-100">
+          <img class="card-img-bot" [src]="product.image" alt="..." />
+          <div class="card-body p-4">
+            <div class="text-center">
+              <h5 class="fw-bolder">{{ product.title }}</h5>
+              <p>{{ product.price }}</p>
+            </div>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <a
+                class="btn btn-outline-dark mt-auto"
+                [routerLink]="['/products', product.id]"
+                >View</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

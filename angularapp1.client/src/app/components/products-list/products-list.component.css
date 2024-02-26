@@ -1,0 +1,7 @@
+.card-img-top {
+  height: 300px;
+  object-fit: contain;
+}
+.card-footer .btn {
+  margin: 10px; /* Adjust the value as per your preference */
+}
